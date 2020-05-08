@@ -25,6 +25,16 @@ export const computeFilterMatchMode = (filterDetails: { matchMode?: string }): s
   return (filterDetails && filterDetails.matchMode) || 'contains';
 };
 
+export interface Pagination {
+    page: number;
+    size: number;
+    sort: string[];
+}
+
+export interface Search {
+    query: string;
+}
+
 export interface SearchWithPagination extends Search, Pagination {}
 
 export const createRequestOption = (req?: any): HttpParams => {
